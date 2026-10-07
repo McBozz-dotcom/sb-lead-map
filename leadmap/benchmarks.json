@@ -1,0 +1,16 @@
+{
+  "_about": "Approximate U.S. annual revenue per employee by industry, rounded. Derived from U.S. Census Bureau Economic Census / Statistics of U.S. Businesses national averages (receipts / paid employees). These are rough industry-wide figures, NOT data about any specific business. Edit freely if you have better local numbers.",
+  "_spread": 0.3,
+  "categories": {
+    "restaurant":   {"naics": "7225 Restaurants", "revenue_per_employee": 70000},
+    "cafe_bar":     {"naics": "7224/722515 Bars, cafes", "revenue_per_employee": 75000},
+    "salon":        {"naics": "8121 Personal care services", "revenue_per_employee": 50000},
+    "fitness":      {"naics": "713940 Fitness centers", "revenue_per_employee": 50000},
+    "dental":       {"naics": "621210 Offices of dentists", "revenue_per_employee": 150000},
+    "health":       {"naics": "6213 Offices of other health practitioners", "revenue_per_employee": 110000},
+    "auto":         {"naics": "8111 Automotive repair", "revenue_per_employee": 130000},
+    "home":         {"naics": "238 Specialty trade contractors", "revenue_per_employee": 190000},
+    "retail":       {"naics": "44-45 Retail trade (small stores)", "revenue_per_employee": 170000},
+    "professional": {"naics": "54 Professional services", "revenue_per_employee": 140000}
+  }
+}

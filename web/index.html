@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SB Lead Map</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Press+Start+2P&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="map"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <!-- Left HUD: filters + list -->
+  <aside id="hud" class="panel">
+    <header class="hud-head">
+      <div class="logo">SB <span>LEAD</span> MAP</div>
+      <div class="sub">SANTA BARBARA · GOLETA · CARPINTERIA</div>
+      <button id="hud-toggle" class="icon-btn" title="Collapse panel" aria-label="Collapse panel">◀</button>
+    </header>
+
+    <div class="hud-body">
+      <input id="search" type="search" placeholder="Search name, street, type…  ( / )" autocomplete="off">
+
+      <section class="filter-block">
+        <h3>Business type</h3>
+        <div id="cat-filters" class="chips"></div>
+      </section>
+
+      <section class="filter-block grid2">
+        <label>Website
+          <select id="f-web">
+            <option value="any">Any</option>
+            <option value="none">No website</option>
+            <option value="weak">Weak website</option>
+            <option value="needs">No or weak (best leads)</option>
+            <option value="ok">Looks OK</option>
+          </select>
+        </label>
+        <label>Status
+          <select id="f-status">
+            <option value="any">Any</option>
+            <option value="new">New</option>
+            <option value="contacted">Contacted</option>
+            <option value="interested">Interested</option>
+            <option value="not_interested">Not interested</option>
+            <option value="open">Not ruled out</option>
+          </select>
+        </label>
+        <label>Min wanted level
+          <select id="f-score">
+            <option value="0">Any</option>
+            <option value="2">★★+</option>
+            <option value="3">★★★+</option>
+            <option value="4">★★★★+</option>
+            <option value="5">★★★★★</option>
+          </select>
+        </label>
+        <label>Est. revenue
+          <select id="f-rev">
+            <option value="any">Any</option>
+            <option value="0-250000">Under $250K</option>
+            <option value="250000-1000000">$250K – $1M</option>
+            <option value="1000000-5000000">$1M – $5M</option>
+            <option value="5000000-">$5M+</option>
+          </select>
+        </label>
+        <label>Years in business
+          <span class="range">
+            <input id="f-ymin" type="number" min="0" placeholder="min">
+            <input id="f-ymax" type="number" min="0" placeholder="max">
+          </span>
+        </label>
+        <label class="check"><input id="f-unknown" type="checkbox" checked> Include “Unknown” years / revenue</label>
+      </section>
+
+      <div class="list-head">
+        <span id="count">0 LEADS</span>
+        <span class="list-actions">
+          <select id="sort" title="Sort">
+            <option value="score">Wanted ↓</option>
+            <option value="name">Name A–Z</option>
+            <option value="type">Type</option>
+            <option value="age">Oldest first</option>
+          </select>
+          <button id="export" class="btn small" title="Export filtered leads to CSV">Export CSV</button>
+        </span>
+      </div>
+      <ol id="list"></ol>
+    </div>
+  </aside>
+
+  <!-- Top-right stats -->
+  <div id="stats" class="hud-stats">
+    <div class="money" id="stat-main">$0</div>
+    <div class="stat-row" id="stat-rows"></div>
+    <div class="clock" id="clock"></div>
+  </div>
+
+  <!-- Right detail panel -->
+  <aside id="detail" class="panel hidden" aria-live="polite"></aside>
+
+  <!-- Radar minimap -->
+  <div id="radar-wrap" aria-hidden="true"><div id="radar"></div><div class="player"></div></div>
+
+  <div id="empty" class="hidden panel">
+    <h2>NO DATA YET</h2>
+    <p>Run <code>python collect.py</code> in the project folder, then reload this page.</p>
+  </div>
+  <div id="toast" class="hidden"></div>
+
+  <script src="vendor/leaflet/leaflet.js"></script>
+  <script src="icons.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
