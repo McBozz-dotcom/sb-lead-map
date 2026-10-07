@@ -1,0 +1,13 @@
+# secrets
+.env
+
+# generated data and your private CRM notes (delete these lines if you want them in git)
+data/businesses.json
+data/businesses.csv
+data/cache/
+data/lead_status.json
+data/manual_enrichment.csv
+
+__pycache__/
+*.pyc
+.DS_Store

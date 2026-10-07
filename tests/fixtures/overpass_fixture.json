@@ -1,0 +1,12 @@
+{"_note": "Synthetic test data for unit tests only. Not real businesses.",
+ "elements": [
+  {"type": "node", "id": 1, "lat": 34.4208, "lon": -119.6982, "tags": {"name": "Fixture Taqueria", "amenity": "restaurant", "phone": "+1 805-555-0101", "addr:housenumber": "1", "addr:street": "Test St", "addr:city": "Santa Barbara", "addr:postcode": "93101", "start_date": "1998"}},
+  {"type": "way", "id": 2, "center": {"lat": 34.4358, "lon": -119.8276}, "tags": {"name": "Fixture Hair Studio", "shop": "hairdresser", "website": "example.com"}},
+  {"type": "node", "id": 3, "lat": 34.3989, "lon": -119.5185, "tags": {"name": "Fixture Auto Repair", "shop": "car_repair", "contact:phone": "8055550103"}},
+  {"type": "node", "id": 4, "lat": 34.42, "lon": -119.70, "tags": {"name": "Big Chain Coffee", "amenity": "cafe", "brand": "Big Chain", "brand:wikidata": "Q0"}},
+  {"type": "node", "id": 5, "lat": 34.42, "lon": -119.70, "tags": {"name": "Fixture Supermarket", "shop": "supermarket"}},
+  {"type": "node", "id": 6, "lat": 34.43, "lon": -119.71, "tags": {"name": "Fixture Plumbing", "craft": "plumber", "facebook": "https://facebook.com/fixtureplumbing"}},
+  {"type": "node", "id": 7, "lat": 34.43, "lon": -119.71, "tags": {"amenity": "restaurant"}},
+  {"type": "node", "id": 8, "lat": 34.41, "lon": -119.69, "tags": {"name": "Fixture Family Dental", "amenity": "dentist"}},
+  {"type": "node", "id": 9, "lat": 34.41, "lon": -119.69, "tags": {"name": "Fixture Family Dental", "healthcare": "dentist"}}
+ ]}
